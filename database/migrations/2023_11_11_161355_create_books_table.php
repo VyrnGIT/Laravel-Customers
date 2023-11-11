@@ -11,19 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        // Check if the table doesn't already exist
-       if (!Schema::hasTable('CustomerLists')) {
-        Schema::create('CustomerLists', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('Naam');
-            $table->string('Bank_Account_Number');
-            $table->string('Social_Security_Number');
+            $table->string('title');
+            $table->foreignId('author_id')->constrained();
             $table->timestamps();
-            // $table->foreignId('casinoid')->constrained();
-        
         });
-      }
     }
 
     /**
@@ -31,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('books');
     }
 };

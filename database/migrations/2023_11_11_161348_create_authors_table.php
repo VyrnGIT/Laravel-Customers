@@ -11,26 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        // Check if the table doesn't already exist
-       if (!Schema::hasTable('CustomerLists')) {
-        Schema::create('CustomerLists', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->string('Naam');
-            $table->string('Bank_Account_Number');
-            $table->string('Social_Security_Number');
+            $table->string('name');
             $table->timestamps();
-            // $table->foreignId('casinoid')->constrained();
-        
         });
-      }
     }
-
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('authors');
     }
 };

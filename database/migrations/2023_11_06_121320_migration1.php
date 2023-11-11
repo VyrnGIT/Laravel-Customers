@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Spels', function (Blueprint $table) {
-                $table->id();
-                $table->string('spelnaam');
-                $table->string('gokkans');
-                $table->string('inzet');
-                $table->timestamps();
-                // $table->foreignId('casinoid')->constrained();
-
-
+       // Check if the table doesn't already exist
+       if (!Schema::hasTable('spels')) {
+        Schema::create('spels', function (Blueprint $table) {
+            // ... table definition ...
+            $table->id();
+            $table->string('spelnaam');
+            $table->string('gokkans');
+            $table->string('inzet');
+            $table->timestamps();
+        
         });
+      }
+
+        
     }
 
     /**
