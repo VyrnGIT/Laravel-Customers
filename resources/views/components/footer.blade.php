@@ -7,7 +7,7 @@
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
                 <!-- Year Display -->
-                <p>&copy; <span id="currentYear"></span> Laravel PHP</p>
+                <p>&copy; <span id="currentYear"></span> Laravel PHP!</p>
             </div>
         </div>
     </footer>
