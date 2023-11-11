@@ -23,13 +23,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/authors', function () {
-    $authors = Author::with('books')->get();
-
-    return view('authors.index', compact('authors'));
-});
-
+// START AUTH
 Route::middleware('auth')->group(function () {
+
+    Route::get('/authors', function () {
+        $authors = Author::with('books')->get();
+    
+        return view('authors.index', compact('authors'));
+    })->name('authors.index');
 
     // home
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');

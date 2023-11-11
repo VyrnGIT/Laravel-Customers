@@ -12,6 +12,8 @@
                     {{ __("You're logged in!") }}
                     <br>
                         <a href="{{route('customer.list')}}" class="text-blue-500">Customer List</a>
+                    <br>
+                        <a href="{{route('authors.index')}}" class="text-blue-500">Authors</a>
                 </div>
             </div>
         </div>
