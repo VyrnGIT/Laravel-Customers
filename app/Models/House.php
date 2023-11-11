@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class House extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title'];
-
-    public function author()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Author::class);
+        return $this->belongsTo(User::class, 'userphp artisan migrate_id');
     }
 }
