@@ -13,6 +13,6 @@ class SpelSeeder extends Seeder
      */
     public function run(): void
     {
-        SpelFactory::New()->count(205)->create();
+        SpelFactory::New()->count(5)->create();
     }
 }
