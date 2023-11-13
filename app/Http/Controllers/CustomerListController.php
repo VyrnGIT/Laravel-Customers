@@ -9,6 +9,8 @@ class CustomerListController extends Controller
 {
     public function index()
     {
+
+        // rediret( url('/bla'));
         $customers = CustomerList::all();
 
         return view('customers.customerlist', ['customers' => $customers]);
